@@ -1,0 +1,33 @@
+<ui:composition 
+
+    xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:p="http://primefaces.org/ui"
+    xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+
+    <div>
+        <h:form>  
+            <p:growl id="messages"/>
+
+            <p:menubar>
+                <p:menuitem value="Home" url="#{ctrSession.externalContext}/dashboard.jsf" />
+                <p:submenu label="Consultas" icon="pi pi-file">               
+                    <p:menuitem value="Cuentas" url="#{ctrSession.externalContext}/cuentas.jsf" />
+                    <p:separator />
+                    <p:menuitem value="Salir" url="#" />
+                </p:submenu>
+
+                <f:facet name="options">
+                    <h:outputLabel for="name" value="Bienvenido: #{ctrSession.usuario}"/>
+                    <p:separator />
+                    <p:commandButton type="submit" value="Logout" icon="pi pi-home" action="#{ctrSession.logout()}"/>
+                </f:facet>
+            </p:menubar>
+        </h:form>
+
+    </div>
+
+
+</ui:composition>

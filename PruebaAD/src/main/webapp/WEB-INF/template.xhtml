@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <f:facet name="first">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+            <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+            <meta name="apple-mobile-web-app-capable" content="yes" />
+        </f:facet>
+        <meta http-equiv="refresh" content="7200;url=#{ctrSession.externalContext}/timeout.jsf"/>
+        <link rel="shortcut icon" href="#{ctrSession.externalContext}/favicon.ico" type="image/x-icon" />
+        <title>Don Bosquito</title>
+            <ui:insert name="head" />
+    </h:head>
+
+    <h:body>   
+        <ui:include src="topbar.xhtml" />
+        <div id="layout-portlets-cover" class="fontRegular">
+            <ui:insert name="content">
+                Por favor inicialice el contenido de la pantalla
+            </ui:insert>
+        </div>
+        <p:ajaxStatus onstart="PF('statusDialog').show()" onsuccess="PF('statusDialog').hide()" />
+        <p:growl id="msgBox" showDetail="true" showSummary="true"/>
+        
+    </h:body>
+
+</html>
